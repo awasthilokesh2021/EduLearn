@@ -1,70 +1,61 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+// const { id } = useParams();
+  // const track = skillTrackData[id];
 
-## Available Scripts
+  // console.log(track,"track");
 
-In the project directory, you can run:
+  // if (!track) return <p className="text-center text-lg">Skill Track Not Found!</p>;
 
-### `npm start`
+  // const handlePayment = async () => {
+  //   try {
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+  //     const keyRes = await axios.get("http://localhost:5000/api/payment/get-key");
+  //     const razorpayKey = keyRes.data.key; 
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+  //     const res = await axios.post("http://localhost:5000/api/payment/create-order", {
+  //       amount: track.price,
+  //       currency: "INR",
+  //     });
 
-### `npm test`
+  //     const { id: order_id, amount, currency } = res.data;
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+  //     const options = {
+  //       key: razorpayKey,
+  //       amount,
+  //       currency,
+  //       name: "EduLearn",
+  //       description: track.title,
+  //       order_id,
+  //       handler: async (response) => {
+  //         alert("Payment Successful!");
+  //         console.log("Payment Response:", response);
+  //       },
+  //       prefill: {
+  //         name: "Lokesh Awasthi",
+  //         email: "awasthi21.lokesh@gmail.com",
+  //         contact: "8442060273",
+  //       },
+  //       theme: {
+  //         color: "#3399cc",
+  //       },
+  //     };
 
-### `npm run build`
+  //     const razor = new window.Razorpay(options);
+  //     razor.open();
+  //   } catch (error) {
+  //     console.error("Payment Error:", error);
+  //   }
+  // };
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+  // return (
+  //   <div className="p-6 max-w-2xl mx-auto text-center">
+  //     <h1 className="text-3xl font-bold mb-4">{track.title}</h1>
+  //     <p className="text-gray-600">{track.description}</p>
+  //     <div className="mt-4 text-lg font-bold text-blue-600">₹{track.price}</div>
+  //     <button
+  //       onClick={handlePayment}
+  //       className="mt-6 bg-green-500 text-white px-6 py-2 rounded hover:bg-green-600"
+  //     >
+  //       Buy Now
+  //     </button>
+  //   </div>
