@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { motion, AnimatePresence } from "framer-motion";
-import { FaBars, FaTimes, FaUserCircle } from "react-icons/fa";
+import {  FaUserCircle } from "react-icons/fa";
 import axios from "axios";
 import { logoutUser } from "../redux/authSlice";
 
@@ -25,6 +25,12 @@ const Nav = () => {
       console.error("Logout Failed:", error);
     }
   };
+
+  //✅ Name ka first letter capitalize karein
+  const getFormattedName = (name) => {
+    return name ? name.charAt(0).toUpperCase() : "";
+  };
+
 
   return (
     <nav className="bg-white shadow-md p-3 fixed w-full top-0 z-50">
@@ -54,12 +60,14 @@ const Nav = () => {
         </ul>
 
         {/* ✅ Right Section */}
-        <div className="flex items-center space-x-4">
-          {/* ✅ Profile Dropdown */}
-          {user && (
+        {user ? (
             <div className="relative">
-              <button onClick={() => setDropdownOpen(!dropdownOpen)} className="text-2xl">
-                <FaUserCircle />
+              <button 
+                onClick={() => setDropdownOpen(!dropdownOpen)}
+                className="text-lg font-semibold flex items-center space-x-2"
+              >
+                <span className="border rounded-full text-bold test-white px-3 bg-slate-100" >
+                  {getFormattedName(user.name)}</span>
               </button>
 
               <AnimatePresence>
@@ -80,13 +88,11 @@ const Nav = () => {
                 )}
               </AnimatePresence>
             </div>
+          ) : (
+            <NavLink to="/login" className="text-2xl text-gray-600 hover:text-blue-500">
+              <FaUserCircle />
+            </NavLink>
           )}
-
-          {/* ✅ Mobile Menu Button */}
-          <button className="md:hidden text-2xl" onClick={() => setMenuOpen(!menuOpen)}>
-            {menuOpen ? <FaTimes /> : <FaBars />}
-          </button>
-        </div>
       </div>
 
       {/* ✅ Mobile Menu */}

@@ -50,7 +50,7 @@ const AdminDashboard = () => {
   }, []);
 
   return (
-    <div className="min-h-screen flex">
+    <div className="min-h-screen flex mt-10">
       {/* ✅ Sidebar */}
       <div className="w-1/4 bg-blue-900 text-white p-5">
         <h2 className="text-2xl font-bold mb-5">Admin Panel</h2>

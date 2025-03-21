@@ -24,7 +24,7 @@ const Signin = () => {
         "http://localhost:5000/api/auth/signup",
         formData
       );
-      console.log(res)
+      //console.log(res)
       setMessage("✅ Registration Successful!");
       setTimeout(() => navigate("/login"), 2000); // Redirect to login page
     } catch (error) {
@@ -37,7 +37,7 @@ const Signin = () => {
     <div className="flex items-center justify-center min-h-screen bg-gray-100">
       <div className="bg-white p-6 rounded-lg shadow-md w-80">
         <h2 className="text-2xl font-bold text-center mb-6 text-blue-600">
-          Sign In
+          Sign Up
         </h2>
         {message && <p className="text-center mb-4 text-red-500">{message}</p>}
         <form onSubmit={handleSubmit} className="space-y-4">
@@ -49,7 +49,7 @@ const Signin = () => {
         <p className="text-sm mt-3 text-center">
           Don't have an account?
           <NavLink to="/Login" className="text-blue-600 ml-1">
-            Sign Up
+            Sign In
           </NavLink>
         </p>
       </div>
