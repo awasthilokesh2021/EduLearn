@@ -56,7 +56,7 @@ const App = () => {
           <Route path="/contact" element={<Contact />} />
           {role === "admin" && <Route path="/admin/dashboard" element={<AdminDashboard />} />}
           <Route path="/thank-you" element={<PaymentFullfil />} />
-          <Route path="*" element={<h1 className="text-center mt-10 mb-6 text-2xl text-red-500">404 - Page Not Found</h1>} />
+          <Route path="*" element={<Home />} />
         </Routes>
       </Suspense>
       <Footer />
