@@ -19,7 +19,7 @@ const AdminDashboard = () => {
   useEffect(() => {
     const checkAdmin = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/api/admin/dashboard", {
+        const res = await axios.get("https://edu-backend-2.onrender.com/api/admin/dashboard", {
           withCredentials: true,
         });
         setAdmin(res.data.admin);
@@ -34,7 +34,7 @@ const AdminDashboard = () => {
   useEffect(() => {
     const fetchStats = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/api/admin/stats", {
+        const res = await axios.get("https://edu-backend-2.onrender.com/api/admin/stats", {
           withCredentials: true,
         });
         setStats({

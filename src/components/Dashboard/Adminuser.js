@@ -11,7 +11,7 @@ const AdminUsers = () => {
   // ✅ Fetch Users from API
   const fetchUsers = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/admin/users", {
+      const res = await axios.get("https://edu-backend-2.onrender.com/api/admin/users", {
         withCredentials: true,
       });
       setUsers(res.data);
@@ -23,7 +23,7 @@ const AdminUsers = () => {
   // ✅ Delete User
   const deleteUser = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/api/admin/users/${id}`, {
+      await axios.delete(`https://edu-backend-2.onrender.com/api/admin/users/${id}`, {
         withCredentials: true,
       });
       setUsers(users.filter((user) => user._id !== id));

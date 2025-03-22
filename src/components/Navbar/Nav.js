@@ -1,11 +1,10 @@
 import React, { useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { logoutUser } from "../../redux/authSlice";
+import { FaUserCircle, FaBars, FaTimes } from "react-icons/fa";
 import { motion, AnimatePresence } from "framer-motion";
-import {  FaUserCircle } from "react-icons/fa";
 import axios from "axios";
-import { logoutUser } from "../redux/authSlice";
-
 
 const Nav = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -17,7 +16,7 @@ const Nav = () => {
 
   const handleLogout = async () => {
     try {
-      await axios.get("http://localhost:5000/api/auth/logout", { withCredentials: true });
+      await axios.get("https://edu-backend-2.onrender.com/api/auth/logout", { withCredentials: true });
 
       dispatch(logoutUser());
       navigate("/");
@@ -30,7 +29,6 @@ const Nav = () => {
   const getFormattedName = (name) => {
     return name ? name.charAt(0).toUpperCase() : "";
   };
-
 
   return (
     <nav className="bg-white shadow-md p-3 fixed w-full top-0 z-50">
@@ -60,14 +58,16 @@ const Nav = () => {
         </ul>
 
         {/* ✅ Right Section */}
-        {user ? (
+        <div className="flex items-center space-x-4">
+          {user ? (
             <div className="relative">
               <button 
                 onClick={() => setDropdownOpen(!dropdownOpen)}
                 className="text-lg font-semibold flex items-center space-x-2"
               >
-                <span className="border rounded-full text-bold test-white px-3 bg-slate-100" >
-                  {getFormattedName(user.name)}</span>
+                <span className="border rounded-full text-bold px-3 bg-slate-100">
+                  {getFormattedName(user.name)}
+                </span>
               </button>
 
               <AnimatePresence>
@@ -93,6 +93,12 @@ const Nav = () => {
               <FaUserCircle />
             </NavLink>
           )}
+
+          {/* ✅ Mobile Menu Button */}
+          <button className="md:hidden text-2xl" onClick={() => setMenuOpen(!menuOpen)}>
+            {menuOpen ? <FaTimes /> : <FaBars />}
+          </button>
+        </div>
       </div>
 
       {/* ✅ Mobile Menu */}

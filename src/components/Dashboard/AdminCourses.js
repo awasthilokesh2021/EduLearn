@@ -15,7 +15,7 @@ const AdminCourses = () => {
 // ✅ Course Delete Karne Ka Function
   const deleteCourse = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/api/admin/courses/${id}`, {
+      await axios.delete(`https://edu-backend-2.onrender.com/api/admin/courses/${id}`, {
         withCredentials: true,
       });
       setCourses(courses.filter((course) => course._id !== id));
@@ -27,7 +27,7 @@ const AdminCourses = () => {
   // ✅ API Se Courses Fetch Karna
   const fetchCourses = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/admin/courses", {
+      const res = await axios.get("https://edu-backend-2.onrender.com/api/admin/courses", {
         withCredentials: true,
       });
       setCourses(res.data);
@@ -48,7 +48,7 @@ const AdminCourses = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:5000/api/admin/courses",
+        "https://edu-backend-2.onrender.com/api/admin/courses",
         newCourse,
         {
           withCredentials: true,

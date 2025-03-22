@@ -15,7 +15,7 @@ const Contact = () => {
     setResponseMessage("");
 
     try {
-      const res = await axios.post("http://localhost:5000/api/contact/send-message", formData);
+      const res = await axios.post("https://edu-backend-2.onrender.com/api/contact/send-message", formData);
 
       setResponseMessage("✅ Message Sent Successfully!");
       setFormData({ name: "", email: "", address: "", message: "" }); // Reset Form

@@ -24,7 +24,7 @@ const App = () => {
   useEffect(() => {
     const fetchUserRole = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/api/auth/me", { withCredentials: true });
+        const res = await axios.get("https://edu-backend-2.onrender.com/api/auth/me", { withCredentials: true });
         console.log("✅ User Role Response:", res.data);
     
         if (!res.data || !res.data.user) {

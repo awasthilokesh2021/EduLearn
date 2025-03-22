@@ -7,7 +7,7 @@ const AdminPayments = () => {
   useEffect(() => {
     const fetchPayments = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/api/admin/payments", {
+        const res = await axios.get("https://edu-backend-2.onrender.com/api/admin/payments", {
           withCredentials: true,
         });
         setPayments(res.data.payments);

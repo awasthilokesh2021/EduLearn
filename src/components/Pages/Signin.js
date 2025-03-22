@@ -21,7 +21,7 @@ const Signin = () => {
 
     try {
       const res = await axios.post(
-        "http://localhost:5000/api/auth/signup",
+        "https://edu-backend-2.onrender.com/api/auth/signup",
         formData
       );
       //console.log(res)

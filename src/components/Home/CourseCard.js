@@ -26,10 +26,10 @@ const CourseCard = ({ course }) => {
     }
 
     try {
-      const { data } = await axios.get("http://localhost:5000/api/payment/get-key");
+      const { data } = await axios.get("https://edu-backend-2.onrender.com/api/payment/get-key");
       const razorpayKey = data.key;
 
-      const orderRes = await axios.post("http://localhost:5000/api/payment/create-order", {
+      const orderRes = await axios.post("https://edu-backend-2.onrender.com/api/payment/create-order", {
         amount: course.price,
         currency: "INR",
         courseId: course._id,
@@ -47,7 +47,7 @@ const CourseCard = ({ course }) => {
         order_id,
         handler: async (response) => {
           alert("✅ Payment Successful!");
-          await axios.post("http://localhost:5000/api/payment/payment-success", {
+          await axios.post("https://edu-backend-2.onrender.com/api/payment/payment-success", {
             userId: user._id,
             courseId: course._id,
             amount: course.price,

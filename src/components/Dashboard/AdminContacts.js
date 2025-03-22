@@ -8,7 +8,7 @@ const AdminContacts = () => {
   useEffect(() => {
     const fetchContacts = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/api/contact/all", {
+        const res = await axios.get("https://edu-backend-2.onrender.com/api/contact/all", {
           withCredentials: true, // ✅ Cookies Authentication Enable करें
         });
         //console.log("✅ Contact Queries Fetched:", res.data);

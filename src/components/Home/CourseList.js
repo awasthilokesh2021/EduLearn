@@ -8,7 +8,7 @@ const CourseList = () => {
   useEffect(() => {
     const fetchCourses = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/api/admin/courses");
+        const res = await axios.get("https://edu-backend-2.onrender.com/api/admin/courses");
         console.log("✅ Courses Fetched:", res.data);
         setCourses(res.data);
       } catch (error) {
