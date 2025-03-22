@@ -27,13 +27,13 @@ const Profile = () => {
   useEffect(() => {
     const fetchProfileAndOrders = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/api/auth/me", {
+        const res = await axios.get("https://edu-backend-2.onrender.com/api/auth/me", {
           withCredentials: true,
         });
 
         if (!res.data?.user) throw new Error("User not found!");
         
-        const ordersRes = await axios.get("http://localhost:5000/api/payment/orders", {
+        const ordersRes = await axios.get("https://edu-backend-2.onrender.com/api/payment/orders", {
           params: { userId: res.data.user._id },
           withCredentials: true,
         });
