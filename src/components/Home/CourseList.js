@@ -9,7 +9,7 @@ const CourseList = () => {
     const fetchCourses = async () => {
       try {
         const res = await axios.get("https://edu-backend-2.onrender.com/api/admin/courses");
-        console.log("✅ Courses Fetched:", res.data);
+        //console.log("✅ Courses Fetched:", res.data);
         setCourses(res.data);
       } catch (error) {
         console.error("❌ Error fetching courses:", error);

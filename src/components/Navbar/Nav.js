@@ -15,11 +15,13 @@ const Nav = () => {
   const { user, role } = useSelector((state) => state.auth); // ✅ Redux State
 
   const handleLogout = async () => {
-    try {
+  try {
       await axios.get("https://edu-backend-2.onrender.com/api/auth/logout", { withCredentials: true });
 
       dispatch(logoutUser());
+      
       navigate("/");
+    
     } catch (error) {
       console.error("Logout Failed:", error);
     }

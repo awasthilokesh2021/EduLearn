@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 
 const CourseCard = ({ course }) => {
   const navigate = useNavigate();
-  const { user } = useSelector((state) => state.auth); // ✅ Redux से यूज़र लो
+  const { user } = useSelector((state) => state.auth);
 
   useEffect(() => {
     const loadScript = () => {
@@ -27,6 +27,7 @@ const CourseCard = ({ course }) => {
 
     try {
       const { data } = await axios.get("https://edu-backend-2.onrender.com/api/payment/get-key");
+     
       const razorpayKey = data.key;
 
       const orderRes = await axios.post("https://edu-backend-2.onrender.com/api/payment/create-order", {
