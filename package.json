@@ -2,7 +2,7 @@
   "name": "client",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://awasthilokesh2021.github.io/EduLearn/",
+ "homepage": "/EduLearn",
   "dependencies": {
     "@reduxjs/toolkit": "^2.6.1",
     "@testing-library/dom": "^10.4.0",
