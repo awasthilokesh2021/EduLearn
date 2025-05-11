@@ -4,6 +4,7 @@ const Hero = lazy(() => import("./Hero"));
 const Features = lazy(() => import("./Features"));
 const SkillTrack = lazy(() => import("../Pages/SkillTrack"));
 const Testimonials = lazy(() => import("./Testimonials"));
+const Footer = lazy(() => import("../Footer.js/Footer"));
 
 const Home = () => {
   return (
@@ -18,6 +19,7 @@ const Home = () => {
       <Features />
       <SkillTrack />
       <Testimonials />
+        <Footer />
     </Suspense>
   );
 };

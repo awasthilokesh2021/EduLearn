@@ -59,7 +59,6 @@ const App = () => {
           <Route path="*" element={<Home />} />
         </Routes>
       </Suspense>
-      <Footer />
     </Router>
   );
 };
